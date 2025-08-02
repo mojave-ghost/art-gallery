@@ -444,16 +444,34 @@ nav {
 }
 
 .about-image-main {
+    width: 100%;
     height: 500px;
-    background: #1a1a1a;
+    object-fit: cover;
     border-radius: 15px;
     border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.about-image-main:hover {
+    box-shadow: 0 20px 40px rgba(255, 0, 128, 0.3);
+    border-color: #ff0080;
+    transform: scale(1.02);
+}
+
+.about-image-main[src=""],
+.about-image-main:not([src]) {
+    background: #1a1a1a;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #666;
     font-size: 1.2rem;
     letter-spacing: 2px;
+}
+
+.about-image-main[src=""]:after,
+.about-image-main:not([src]):after {
+    content: 'ARTIST PORTRAIT';
 }
 
 .about-intro h2 {
