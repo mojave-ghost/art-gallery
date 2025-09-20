@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annie LeBlanc - Contemporary Artist</title>
-    <style>
 /* ===== CSS RESET & BASE STYLES ===== */
 * {
     margin: 0;
@@ -514,7 +507,694 @@ nav {
     font-weight: 300;
 }
 
-/* Mobile Responsive */
+/* ===== ABOUT PAGE LAYOUT ===== */
+.about {
+    display: grid;
+    gap: 80px;
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.about-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.about-image-main {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.about-image-main:hover {
+    box-shadow: 0 20px 40px rgba(255, 0, 128, 0.3);
+    border-color: #ff0080;
+    transform: scale(1.02);
+}
+
+.about-image-main[src=""],
+.about-image-main:not([src]) {
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.about-image-main[src=""]:after,
+.about-image-main:not([src]):after {
+    content: 'ARTIST PORTRAIT';
+}
+
+.about-intro h2 {
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #ff0080;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.about-tagline {
+    font-size: 1.3rem;
+    color: #cccccc;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.about-story h3,
+.about-philosophy h3 {
+    font-size: 2rem;
+    font-weight: 100;
+    color: #ff0080;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.about-story p,
+.about-philosophy p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #ff0080;
+    border-left: 3px solid #ff0080;
+    padding-left: 20px;
+    margin: 30px 0;
+    line-height: 1.6;
+}
+
+.philosophy-points {
+    display: grid;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.philosophy-item h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.philosophy-item p {
+    font-size: 1rem;
+    color: #999;
+    line-height: 1.6;
+}
+
+/* Timeline Section */
+.about-timeline {
+    padding: 60px 0;
+}
+
+.about-timeline h3 {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #ff0080;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+.timeline {
+    display: grid;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+    padding: 30px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.timeline-year {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff0080;
+    text-align: center;
+    padding: 10px;
+    background: rgba(255, 0, 128, 0.1);
+    border-radius: 10px;
+}
+
+.timeline-content h4 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.timeline-content p {
+    color: #999;
+    line-height: 1.6;
+}
+
+/* Process Section */
+.about-process {
+    padding: 60px 0;
+}
+
+.about-process h3 {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #ff0080;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.process-step {
+    padding: 40px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    border: 1px solid #333;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 0, 128, 0.2);
+    border-color: #ff0080;
+}
+
+.process-step h4 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* ===== GALLERY PAGE LAYOUT ===== */
+.gallery {
+    display: grid;
+    gap: 100px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+/* Gallery Header */
+.gallery-header {
+    display: grid;
+    gap: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.gallery-header h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 100;
+    color: #ff0080;
+    letter-spacing: 3px;
+    text-shadow: 0 0 30px rgba(255, 0, 128, 0.5);
+}
+
+.gallery-header p {
+    font-size: 1.3rem;
+    color: #cccccc;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+/* Collection Sections */
+.collection {
+    display: grid;
+    gap: 50px;
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(255, 0, 128, 0.1);
+}
+
+.collection:last-child {
+    border-bottom: none;
+}
+
+.collection-header {
+    display: grid;
+    gap: 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.collection-header h3 {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #ffffff;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.collection-header h3::after {
+    content: '';
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #ff0080, #00ff80);
+    display: block;
+    margin: 20px auto;
+}
+
+.collection-description {
+    font-size: 1.2rem;
+    color: #999;
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Collection Grid */
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Artwork Cards */
+.artwork-card {
+    display: flex;
+    flex-direction: column;
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.artwork-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 0, 128, 0.1), rgba(0, 255, 128, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.artwork-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(255, 0, 128, 0.3);
+    border-color: #ff0080;
+}
+
+.artwork-card:hover::before {
+    opacity: 1;
+}
+
+.artwork-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.artwork-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 0, 128, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.artwork-card:hover .artwork-image::before {
+    opacity: 1;
+    animation: shimmer 2s ease-in-out;
+}
+
+/* Fallback styling for missing images */
+.artwork-image[src=""] {
+    background: linear-gradient(45deg, #2a2a2a, #1a1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.artwork-image[src=""]:after {
+    content: 'IMAGE LOADING...';
+}
+
+/* Error state for broken images */
+.artwork-image:not([src]),
+.artwork-image[src=""],
+.artwork-image[src*="placeholder"] {
+    background: linear-gradient(45deg, #2a2a2a, #1a1a1a);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.artwork-image:not([src]):after,
+.artwork-image[src=""]:after,
+.artwork-image[src*="placeholder"]:after {
+    content: 'ARTWORK PREVIEW';
+    position: absolute;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.artwork-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.artwork-info h4 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.artwork-info p {
+    color: #999;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.artwork-medium {
+    font-size: 0.9rem;
+    color: #ff0080;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+/* Special styling for major collections */
+.collection:nth-child(2) .collection-header h3 {
+    background: linear-gradient(45deg, #ff0080, #00ff80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.collection:nth-child(3) .collection-header h3 {
+    color: #00ff80;
+    text-shadow: 0 0 30px rgba(0, 255, 128, 0.5);
+}
+
+/* ===== CONTACT PAGE LAYOUT ===== */
+.contact {
+    display: grid;
+    gap: 80px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    background: radial-gradient(circle at 30% 70%, rgba(0, 255, 128, 0.05) 0%, transparent 50%);
+}
+
+.contact-header {
+    display: grid;
+    gap: 20px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.contact-header h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 100;
+    color: #ff0080;
+    letter-spacing: 3px;
+    text-shadow: 0 0 30px rgba(255, 0, 128, 0.5);
+}
+
+.contact-header p {
+    font-size: 1.3rem;
+    color: #cccccc;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* Contact Info Section */
+.contact-info {
+    display: grid;
+    gap: 40px;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    font-weight: 100;
+    color: #ff0080;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.contact-methods {
+    display: grid;
+    gap: 30px;
+}
+
+.contact-method {
+    padding: 25px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    border-color: #ff0080;
+    box-shadow: 0 10px 30px rgba(255, 0, 128, 0.2);
+    transform: translateY(-5px);
+}
+
+.contact-method h4 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.contact-method p {
+    color: #999;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.detail-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 0, 128, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 0, 128, 0.2);
+}
+
+.detail-item h4 {
+    font-size: 1.1rem;
+    color: #ff0080;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.detail-item p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Contact Form Section */
+.contact-form-container {
+    display: grid;
+    gap: 30px;
+}
+
+.contact-form-container h3 {
+    font-size: 2rem;
+    font-weight: 100;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.contact-form {
+    display: grid;
+    gap: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #cccccc;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #ff0080;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Contact Footer */
+.contact-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 60px 40px;
+    background: #1a1a1a;
+    border-radius: 20px;
+    border: 1px solid #333;
+    margin-top: 40px;
+}
+
+.footer-note h4,
+.footer-social h4 {
+    font-size: 1.3rem;
+    color: #ff0080;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.footer-note p,
+.footer-social p {
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    background: none;
+    border: 1px solid #333;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+.social-link:hover {
+    border-color: #ff0080;
+    color: #ff0080;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .nav-container {
         grid-template-columns: 1fr;
@@ -539,121 +1219,37 @@ nav {
     .featured-preview {
         grid-template-columns: 1fr;
     }
+    
+    .about-hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-footer {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .timeline-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
 }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">ANNIE LEBLANC</div>
-            <ul class="nav-links">
-                <li><a href="home.html" class="active">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="gallery.html">GALLERY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-            <div class="social-share">
-                <button class="icon-btn" onclick="shareLink()" title="Share">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.50-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92S19.61 16.08 18 16.08z"/>
-                    </svg>
-                </button>
-                <button class="icon-btn" onclick="openSocial('instagram')" title="Instagram">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Home Content -->
-    <main>
-        <section class="home">
-            <div class="hero-content">
-                <h1>LEBLANC</h1>
-                <p>CONTEMPORARY VISUAL ARTIST</p>
-                <a href="gallery.html" class="cta-btn">VIEW COLLECTION</a>
-            </div>
-            
-            <div class="home-intro">
-                <div class="intro-text">
-                    <h2>Pushing Boundaries Through Bold Expression</h2>
-                    <p>Annie LeBlanc creates contemporary art that challenges conventional narratives through striking visual compositions and fearless exploration of modern themes.</p>
-                </div>
-            </div>
-
-            <div class="featured-work">
-                <h3>Featured Collection</h3>
-                <div class="featured-preview">
-                    <div class="featured-item">
-                        <img src="images/fabulous_five.jpg" alt="The Fabulous Five space family" class="featured-image" onclick="openLightbox(this)">
-                        <h4>"Watch the Sun Rise Over Mt. Diablo"</h4>
-                        <p>A six-piece narrative exploring mythology, technology, and human connection</p>
-                    </div>
-                    <div class="featured-item">
-                        <img src="images/pyramid_ascends.jpg" alt="Electric pyramid in desert storm" class="featured-image" onclick="openLightbox(this)">
-                        <h4>"Television Skies"</h4>
-                        <p>Dystopian visions of surveillance, resistance, and corporate control</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="home-stats">
-                <div class="stat-item">
-                    <h4>50+</h4>
-                    <p>Original Works</p>
-                </div>
-                <div class="stat-item">
-                    <h4>12</h4>
-                    <p>Exhibitions</p>
-                </div>
-                <div class="stat-item">
-                    <h4>2020</h4>
-                    <p>Career Started</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Image Lightbox Modal -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
-        <img src="" alt="" class="lightbox-image" id="lightboxImage">
-    </div>
-
-    <script>
-        function openLightbox(img) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightboxImage');
-            lightboxImage.src = img.src;
-            lightboxImage.alt = img.alt;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-        }
-
-        function shareLink() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Annie LeBlanc - Contemporary Artist',
-                    url: window.location.href
-                });
-            } else {
-                navigator.clipboard.writeText(window.location.href);
-                alert('Link copied to clipboard!');
-            }
-        }
-
-        function openSocial(platform) {
-            if (platform === 'instagram') {
-                window.open('https://instagram.com/annieleblanc_art', '_blank');
-            }
-        }
-    </script>
-</body>
-</html>
