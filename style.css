@@ -222,7 +222,6 @@ nav {
 .home {
     display: grid;
     grid-template-rows: 100vh auto auto auto;
-    gap: 80px;
     padding-top: 100px;
 }
 
