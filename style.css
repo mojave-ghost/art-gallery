@@ -236,7 +236,7 @@ nav {
     background: radial-gradient(circle at 50% 50%, rgba(255, 0, 128, 0.1) 0%, transparent 70%);
     gap: 30px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Silver Paint Bleed Effect */
