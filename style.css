@@ -243,6 +243,7 @@ nav {
     position: absolute;
     left: 0;
     right: 0;
+    top: -100px;
     height: 400px;
     background: linear-gradient(180deg, 
         rgba(192, 192, 192, 0.9) 0%,
@@ -387,7 +388,6 @@ nav {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    gap: 30px;
     padding: 60px 40px;
     background: linear-gradient(135deg, rgba(255, 0, 128, 0.05) 0%, rgba(0, 255, 128, 0.05) 100%);
     border-radius: 20px;
